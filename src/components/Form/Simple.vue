@@ -4,6 +4,7 @@
             :key="field.id"
             :span="field.size || 24">
       <el-form-item :label="field.label"
+                    :name="field.id"
                     :prop="field.id">
         <el-input :placeholder="field.placeholder"
                   v-model="innerModel[field.id]"
