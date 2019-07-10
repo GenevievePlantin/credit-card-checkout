@@ -2,7 +2,8 @@
   <el-table :data="summary"
             :summary-method="getTotal"
             show-summary
-            :show-header="false">
+            :show-header="false"
+            :cell-class-name="getCellClass">
     <el-table-column prop="description"/>
     <el-table-column prop="price"
                      align="right"/>
@@ -51,6 +52,14 @@ export default {
       let price = item.price
       if (price === 'Free') price = 0
       return total + price
+    },
+    getCellClass ({ row, column, rowIndex, columnIndex }) {
+      if (rowIndex === 0) {
+        return 'is-bold'
+      } else if (column.property === 'price' && row.price === 'Free') {
+        return 'is-green'
+      }
+      return ''
     }
   }
 }

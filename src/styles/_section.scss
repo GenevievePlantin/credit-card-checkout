@@ -1,0 +1,47 @@
+.section {
+  padding: $--section-spacing;
+  border-radius: $--border-radius-large;
+  background-color: $--color-white;
+  box-shadow: $--section-box-shadow;
+  height: 100%;
+  position: relative;
+
+  h1, h2 {
+    margin: $--section-title-margin;
+    line-height: $--section-title-line-height;
+  }
+
+  p {
+    margin: $--section-paragraph-margin;
+  }
+
+  .description {
+    @include text-special;
+    letter-spacing: $--section-description-letter-spacing;
+    font-size: $--font-size-small;
+  }
+
+  .price {
+    font-family: $--font-family-special;
+    font-size: $--font-size-large;
+  }
+
+  img {
+    width: $--section-img-width;
+    position: absolute;
+    left: $--section-img-left;
+    bottom: $--section-img-bottom;
+  }
+
+  &.is-small {
+    margin: $--section-small-margin;
+    background-color: $--color-primary;
+    border-radius: $--border-radius-large 0 0 $--border-radius-large;
+    color: $--section-small-color;
+    height: $--section-small-height;
+
+    .description {
+      color: $--section-small-color-info;
+    }
+  }
+}

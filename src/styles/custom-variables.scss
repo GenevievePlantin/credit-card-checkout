@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+$--font-family-primary: Arial, sans-serif;
+$--font-family-special: 'Montserrat', sans-serif;
+$--text-transform-special: uppercase;
+$--font-weight-special: bold;
+
+$--font-size-primary: 1em;
+$--font-size-smaller: 0.7em;
+$--font-size-small: 0.9em;
+$--font-size-medium: 1.15em;
+$--font-size-large: 1.7em;
+$--font-size-larger: 2em;
+
+$--border-radius-large: 20px;
+
+$--checkout-page-width: 825px;
+$--checkout-page-height: 618px;
+$--checkout-page-margin: 80px auto;
+
+$--section-spacing: 50px;
+$--section-spacing-double: 2 * $--section-spacing;
+$--section-box-shadow: 0 10px 30px rgba($--color-primary, .18);
+
+$--section-title-margin: 0 0 15px 0;
+$--section-title-line-height: 1em;
+$--section-paragraph-margin: 5px 0;
+
+$--section-description-letter-spacing: 1px;
+
+$--section-img-width: 113%;
+$--section-img-left: ($--section-spacing + 20px) * -1;
+$--section-img-bottom: -1px;
+
+$--section-small-width: 72%;
+$--section-small-height: calc(100% - #{$--section-spacing-double});
+$--section-small-margin: $--section-spacing 0 $--section-spacing (100% - $--section-small-width);
+$--section-small-color: $--color-white;
+$--section-small-color-info: $--color-primary-light-6;
+
+$--form-margin-top: 25px;
+$--form-label-color: darken($--border-color-base, 10%);
+$--form-label-margin: 5px 0;
+$--form-item-margin-bottom: 18px;
+$--form-button-box-shadow: 0 0px 10px rgba($--color-success, 0.5);
+$--form-button-width: 100%;
+$--form-button-text-transform: uppercase;
+
+$--table-margin: 15px 0 30px 0;
+$--table-body-border: 1px solid $--table-border-color;
+$--table-footer-font-weight: bold;
+$--table-footer-font-size: $--font-size-medium;
+$--table-footer-padding: 10px 0;

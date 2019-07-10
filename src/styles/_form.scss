@@ -1,0 +1,25 @@
+.el-form {
+  margin-top: $--form-margin-top;
+
+  label {
+    @include text-special;
+    color: $--form-label-color;
+    margin: $--form-label-margin;
+    line-height: unset;
+    font-size: $--font-size-smaller;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  &-item {
+    margin-bottom: $--form-item-margin-bottom;
+  }
+
+  button {
+    width: $--form-button-width;
+    text-transform: $--form-button-text-transform;
+    box-shadow: $--form-button-box-shadow;
+  }
+}

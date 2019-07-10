@@ -1,0 +1,11 @@
+@mixin montserrat {
+  font-family: $--font-family-special;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin text-special {
+  @include montserrat;  
+  text-transform: $--text-transform-special;
+  font-weight: $--font-weight-special;
+}

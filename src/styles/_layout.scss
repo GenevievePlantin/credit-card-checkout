@@ -1,0 +1,8 @@
+html, body, #app, .el-container, .el-row, .el-col {
+  height: 100%;
+}
+
+.el-container {
+  background-image: linear-gradient(#F5FAFB, #D6E8F3);
+  font-family: $--font-family-primary;
+}

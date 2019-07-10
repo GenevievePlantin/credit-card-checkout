@@ -5,7 +5,10 @@
     <simple-form :fields="fields"
                  :model.sync="model"/>
     <slot/>
-    <el-button @click="submitPayment">Checkout now</el-button>
+    <el-button type="success"
+               @click="submitPayment">
+      Checkout now
+    </el-button>
   </el-form>
 </template>
 

@@ -1,0 +1,32 @@
+.el-table {
+  @include montserrat;  
+  margin: $--table-margin;
+
+  &:before {
+    display: none;
+  }
+
+  td {
+    padding: 0;
+
+    &.is-bold {
+      font-weight: bold;
+    }
+
+    &.is-green {
+      color: $--color-success;
+    }
+  }
+
+  .el-table__body-wrapper {
+    padding: 5px 0;
+    border-bottom: $--table-body-border;
+    border-top: $--table-body-border;
+  }
+
+  .el-table__footer-wrapper {
+    padding: $--table-footer-padding;
+    font-size: $--table-footer-font-size;
+    font-weight: $--table-footer-font-weight;
+  }
+}

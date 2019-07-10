@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row class="checkout">
     <el-col :span="12">
       <layout-section size="small">
         <order-item :item="item"/>
@@ -34,7 +34,7 @@ export default {
     item () {
       return {
         name: 'Wedding Cake Pops',
-        description: '6 pcs/set',
+        description: '6 pcs / set',
         price: 69.99,
         img: '/cake.png'
       }
