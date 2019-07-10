@@ -105,7 +105,8 @@ export default {
         callback(new Error('Please input a valid date'))
       } else if (rule.dateAfter) {
         let dateToBeAfter = moment(rule.dateAfter, rule.dateFormat, true)
-        if (rule.dateAfter === 'today') dateToBeAfter = moment().format(rule.dateFormat, true)
+        if (rule.dateAfter === 'today') dateToBeAfter = moment()
+        dateToBeAfter = dateToBeAfter.startOf('month')
         if (momentValue.isBefore(dateToBeAfter)) {
           callback(new Error('Please input a date in the future'))
         }

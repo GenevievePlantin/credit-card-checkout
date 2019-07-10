@@ -14,11 +14,12 @@ const invalidErrorMessage = 'Field is invalid'
 const invalidDateErrorMessage = 'Please input a valid date'
 const futureDateErrorMessage = 'Please input a date in the future'
 const dateFormat = 'MM/YY'
-const today = moment()
+let today = null
 
 describe('Order payment form', () => {
   beforeEach(() => {
     wrapper = mount(OrderPayment, { localVue })
+    today = moment()
   })
 
   afterEach(() => {
@@ -101,9 +102,9 @@ describe('Order payment form', () => {
     validateErrorInput(formItem, 'test', errorClass, invalidDateErrorMessage)
     validateErrorInput(formItem, '12/2020', errorClass, invalidDateErrorMessage)
     validateErrorInput(formItem, '01/12/2020', errorClass, invalidDateErrorMessage)
-
-    // validateErrorInput(formItem, today.subtract(2, 'months').format(dateFormat), errorClass, futureDateErrorMessage)
-    // validateErrorInput(formItem, today.subtract(2, 'years').format(dateFormat), errorClass, futureDateErrorMessage)
+    validateErrorInput(formItem, today.subtract(2, 'months').format(dateFormat), errorClass, futureDateErrorMessage)
+    today = moment()
+    validateErrorInput(formItem, today.subtract(2, 'years').format(dateFormat), errorClass, futureDateErrorMessage)
   })
 
   it('renders a success for a valid CVV number', () => {
