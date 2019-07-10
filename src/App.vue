@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <checkout/>
+    <el-container>
+      <el-main>
+        <router-view/>
+      </el-main>
+    </el-container>
   </div>
 </template>
 
 <script>
-import Checkout from './views/Checkout.vue'
-
 export default {
-  name: 'app',
-  components: {
-    Checkout
-  }
+  name: 'app'
 }
 </script>
