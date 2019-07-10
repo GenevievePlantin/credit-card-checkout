@@ -8,13 +8,13 @@
 </template>
 
 <script>
-  export default {
-    name: 'OrderItem',
-    props: {
-      item: {
-        type: Object,
-        required: true
-      }
+export default {
+  name: 'OrderItem',
+  props: {
+    item: {
+      type: Object,
+      required: true
     }
   }
+}
 </script>

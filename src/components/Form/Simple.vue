@@ -6,7 +6,7 @@
       <el-form-item :label="field.label"
                     :prop="field.id">
         <el-input :placeholder="field.placeholder"
-                  v-model="model[field.id]"
+                  v-model="innerModel[field.id]"
                   :suffix-icon="field.suffixIcon"/>
       </el-form-item>
     </el-col>
@@ -24,6 +24,19 @@ export default {
     model: {
       type: Object,
       required: true
+    }
+  },
+  data () {
+    return {
+      innerModel: Object.assign({}, this.model)
+    }
+  },
+  watch: {
+    innerModel: {
+      deep: true,
+      handler () {
+        this.$emit('update:model', this.innerModel)
+      }
     }
   }
 }

@@ -39,10 +39,10 @@ export default {
       columns.forEach((column, index) => {
         if (index === 0) {
           sums[index] = 'Grand Total'
-          return
+          return true
         } else {
           sums[index] = data.reduce(this.sumOfData, 0)
-          return
+          return true
         }
       })
       return sums
