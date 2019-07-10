@@ -6,13 +6,17 @@
             :cell-class-name="getCellClass">
     <el-table-column prop="description"/>
     <el-table-column prop="price"
-                     align="right"/>
+                     align="right"
+                     :formatter="setCurrency"/>
   </el-table>
 </template>
 
 <script>
+import currency from '@/mixins/currency'
+
 export default {
   name: 'OrderSummary',
+  mixins: [currency],
   props: {
     price: {
       type: Number,
@@ -42,7 +46,7 @@ export default {
           sums[index] = 'Grand Total'
           return true
         } else {
-          sums[index] = data.reduce(this.sumOfData, 0)
+          sums[index] = this.currency(data.reduce(this.sumOfData, 0))
           return true
         }
       })
@@ -60,6 +64,9 @@ export default {
         return 'is-green'
       }
       return ''
+    },
+    setCurrency (row, column, cellValue, index) {
+      return this.currency(row[column.property])
     }
   }
 }
