@@ -1,15 +1,11 @@
 <template>
-  <el-form ref="form"
-           :model="model"
-           :rules="rules">
-    <simple-form :fields="fields"
-                 :model.sync="model"/>
+  <simple-form :fields="fields"
+               :model.sync="model"
+               :rules="rules"
+               submitLabel="Checkout now"
+               @submit="displayConfirmation">
     <slot/>
-    <el-button type="success"
-               @click="submitPayment">
-      Checkout now
-    </el-button>
-  </el-form>
+  </simple-form>
 </template>
 
 <script>
@@ -113,11 +109,12 @@ export default {
       }
       callback()
     },
-    submitPayment () {
-      this.$refs.form.validate((valid) => {
-        if (valid) {
-          alert('submit!')
-        }
+    displayConfirmation () {
+      this.$message({
+        message: 'Payment successful. Your order confirmation is 2TGS245632',
+        type: 'success',
+        duration: 0,
+        showClose: true
       })
     }
   }
